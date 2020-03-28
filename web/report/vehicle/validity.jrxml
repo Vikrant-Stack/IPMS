@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="vehicle_no" class="java.lang.String"/>
+	<field name="vehicle_code" class="java.lang.String"/>
+	<field name="permit_validity" class="java.lang.String"/>
+	<field name="fitness_validity" class="java.lang.String"/>
+	<field name="puc_validity" class="java.lang.String"/>
+	<field name="common_name" class="java.lang.String"/>
+	<field name="diffper" class="java.lang.Long"/>
+	<variable name="S.No" class="java.lang.Integer">
+		<variableExpression><![CDATA[$V{S.No}+1]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="133" y="19" width="282" height="32" backcolor="#CCFFCC"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Report of Vehicle Validity]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="46" y="23" width="57" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Vehicle No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="103" y="23" width="73" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Vehicle Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="176" y="23" width="78" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[Permit Validity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="254" y="23" width="84" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[   Fitness Validity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="338" y="23" width="77" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[    PUC Validity]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Opaque" x="415" y="23" width="140" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[        $F{common_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="23" width="46" height="20" backcolor="#CCCCCC"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<text><![CDATA[S.No]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="46" y="0" width="57" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[         $F{vehicle_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="103" y="0" width="73" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[         $F{vehicle_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="176" y="0" width="78" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[           $F{permit_validity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="254" y="0" width="84" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[            $F{fitness_validity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="338" y="0" width="77" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[          $F{puc_validity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="415" y="0" width="140" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[                  $F{diffper}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="46" height="20" backcolor="#99FFFF"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.25"/>
+					<leftPen lineWidth="1.25"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.25"/>
+				</box>
+				<textElement/>
+				<textFieldExpression><![CDATA[    $V{S.No}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
